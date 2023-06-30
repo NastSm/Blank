@@ -1,0 +1,19 @@
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
+
+class ButtonApp (App):
+    def build (self):
+        self.orientation = 'vertical'
+        self.padding = 50
+        
+        self.add_widget(self.number1_input)
+        self.add_widget(self.number2_input)
+        self.add_widget(Label(text="Результат:"))
+        self.result_label = Label()
+        self.add_widget(self.result_label)
+        self.add_widget(Button(text="Сложить", on_press=self.add_numbers))
+
+return ButtonApp()
+ButtonApp().run()
